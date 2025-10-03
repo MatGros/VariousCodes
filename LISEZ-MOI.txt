@@ -1,0 +1,124 @@
+================================================================================
+  DIMCABLE MGS-05 - Outil de Dimensionnement de Câbles Électriques
+================================================================================
+
+VERSION PURE HTML/CSS/JAVASCRIPT
+Aucune installation requise - Fonctionne directement dans votre navigateur !
+
+
+================================================================================
+UTILISATION
+================================================================================
+
+MÉTHODE 1 (Recommandée) :
+  → Double-cliquez sur "LANCER_DIMCABLE.bat"
+
+MÉTHODE 2 :
+  → Double-cliquez sur "dimcable.html"
+
+MÉTHODE 3 :
+  → Clic droit sur "dimcable.html" → Ouvrir avec → Votre navigateur préféré
+
+================================================================================
+FICHIERS DE L'APPLICATION
+================================================================================
+
+  dimcable.html        - Interface utilisateur (page principale)
+  dimcable.css         - Styles de l'application
+  dimcable.js          - Logique de calcul et fonctionnalités
+  LANCER_DIMCABLE.bat  - Script de lancement rapide (Windows)
+  LISEZ-MOI.txt        - Ce fichier
+
+================================================================================
+FONCTIONNALITÉS
+================================================================================
+
+✓ 3 Modes de calcul :
+  1. Calcul de section recommandée
+  2. Distance maximale admissible
+  3. Courant maximal admissible
+
+✓ Conforme aux normes NF C 15-100 & IEC 60364
+
+✓ Base de données intégrée :
+  - Câbles U-1000 R2V (sections 1.5 à 240 mm²)
+  - Câbles HO7RNF (sections 1.5 à 16 mm²)
+
+✓ Prise en compte :
+  - Coefficients de correction (température, groupement, mode de pose)
+  - Monophasé et triphasé
+  - Mode moteur (chute de tension 5%)
+  - Facteur de puissance réglable
+
+✓ Visualisations graphiques interactives (Chart.js)
+
+✓ Export des résultats :
+  - Format CSV (pour Excel)
+  - Format PDF (note de calcul complète)
+
+✓ Sauvegarde automatique des paramètres (localStorage)
+
+✓ Mode Expert : détails des calculs
+
+================================================================================
+COMPATIBILITÉ
+================================================================================
+
+Navigateurs supportés :
+  ✓ Google Chrome (recommandé)
+  ✓ Microsoft Edge
+  ✓ Mozilla Firefox
+  ✓ Safari
+  ✓ Opera
+
+Systèmes d'exploitation :
+  ✓ Windows 7/8/10/11
+  ✓ macOS
+  ✓ Linux
+
+Connexion Internet requise uniquement pour :
+  - Chargement des bibliothèques Chart.js (graphiques)
+  - Export PDF (jsPDF + html2canvas)
+
+================================================================================
+MIGRATION DEPUIS L'ANCIENNE VERSION
+================================================================================
+
+Cette version remplace l'ancienne application React/Vite.
+
+Avantages de la nouvelle version :
+  ✓ Aucune installation de Node.js nécessaire
+  ✓ Pas de compilation (npm build)
+  ✓ Lancement instantané (double-clic)
+  ✓ Plus facile à maintenir
+  ✓ Fichiers plus légers
+  ✓ Peut être distribué facilement (zip)
+
+Les calculs et fonctionnalités restent identiques !
+
+================================================================================
+NOTES TECHNIQUES
+================================================================================
+
+- Les données sont sauvegardées localement dans le navigateur (localStorage)
+- Aucune connexion serveur requise pour les calculs
+- Les graphiques utilisent Chart.js v4.4.0 (chargé depuis CDN)
+- Export PDF via jsPDF v2.5.1 et html2canvas v1.4.1 (CDN)
+
+================================================================================
+SUPPORT & CONTACT
+================================================================================
+
+Pour toute question ou suggestion :
+  → MGS - DimCable MGS-05
+  → Version : 1.0.0 (HTML/JS Pure)
+  → Date : Octobre 2024
+
+================================================================================
+LICENCE
+================================================================================
+
+© 2024 MGS - Tous droits réservés
+Usage interne uniquement
+
+================================================================================
