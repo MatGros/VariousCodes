@@ -101,9 +101,18 @@ EnableCam = 1
 
 # Initialize video stream and threads
 if EnableCam == 1 :
-    # urlRTSP = "rtsp://admin:iop147258@192.168.1.21:554/Streaming/Channels/2"
-    urlRTSP = "test.mp4"
-    #urlRTSP = "rtsp://admin:@192.168.1.22:554"
+    # SÉCURITÉ : Les identifiants ne doivent JAMAIS être hardcodés dans le code source.
+    # Pour une caméra IP avec authentification, utiliser une variable d'environnement.
+    # Voir la configuration dans MG_HomeSecurity_Cam1.py pour plus de détails.
+    # 
+    # Configuration recommandée :
+    # Créer un fichier .env avec : CAMERA2_RTSP_URL=rtsp://username:password@192.168.x.x:554/path
+    # Pour les tests avec un fichier vidéo : CAMERA2_RTSP_URL=test.mp4
+    #
+    # Note : Aucune valeur par défaut fournie pour forcer une configuration explicite
+    urlRTSP = os.getenv('CAMERA2_RTSP_URL')
+    if not urlRTSP:
+        raise ValueError("CAMERA2_RTSP_URL environment variable must be configured. See .env.example for details.")
     videostream = ThreadVideoCapture(resolution=(imW,imH),url=urlRTSP).start(args)
     time.sleep(1)
     

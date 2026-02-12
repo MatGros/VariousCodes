@@ -103,9 +103,26 @@ EnableCam = 1
 
 # Initialize video stream and threads
 if EnableCam == 1 :
-    #urlRTSP = "rtsp://admin:iop147258@192.168.1.21:554/Streaming/Channels/2"
-    urlRTSP = "rtsp://admin:@192.168.1.22:554"
-    #urlRTSP = "rtsp://admin:iop147258@192.168.1.20:554/Streaming/Channels/201"
+    # SÉCURITÉ : Les identifiants ne doivent JAMAIS être hardcodés dans le code source.
+    # Utiliser une variable d'environnement pour l'URL RTSP complète avec authentification.
+    # 
+    # Configuration recommandée :
+    # 1. Créer un fichier .env à la racine du projet (déjà exclu du contrôle de version via .gitignore)
+    # 2. Ajouter : CAMERA_RTSP_URL=rtsp://username:password@192.168.x.x:554/path
+    # 3. Utiliser python-dotenv pour charger automatiquement : pip install python-dotenv
+    #
+    # Exemple d'utilisation avec python-dotenv :
+    #   from dotenv import load_dotenv
+    #   load_dotenv()
+    #   urlRTSP = os.getenv('CAMERA_RTSP_URL')
+    #   if not urlRTSP:
+    #       raise ValueError("CAMERA_RTSP_URL must be set in environment or .env file")
+    #
+    # Note : Aucune valeur par défaut n'est fournie pour forcer une configuration explicite
+    # et sécurisée via des variables d'environnement
+    urlRTSP = os.getenv('CAMERA_RTSP_URL')
+    if not urlRTSP:
+        raise ValueError("CAMERA_RTSP_URL environment variable must be configured. See .env.example for details.")
     videostream = ThreadVideoCapture(resolution=(imW,imH),url=urlRTSP).start(args)
     time.sleep(1)
     
