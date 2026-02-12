@@ -106,11 +106,13 @@ if EnableCam == 1 :
     # Voir la configuration dans MG_HomeSecurity_Cam1.py pour plus de détails.
     # 
     # Configuration recommandée :
-    # Créer un fichier .env avec : CAMERA2_RTSP_URL=rtsp://username:password@ip:port/path
-    # puis utiliser : urlRTSP = os.getenv('CAMERA2_RTSP_URL', 'test.mp4')
+    # Créer un fichier .env avec : CAMERA2_RTSP_URL=rtsp://username:password@192.168.x.x:554/path
+    # Pour les tests avec un fichier vidéo : CAMERA2_RTSP_URL=test.mp4
     #
-    # Note : test.mp4 est utilisé par défaut pour les tests locaux sans caméra IP
-    urlRTSP = os.getenv('CAMERA2_RTSP_URL', 'test.mp4')
+    # Note : Aucune valeur par défaut fournie pour forcer une configuration explicite
+    urlRTSP = os.getenv('CAMERA2_RTSP_URL')
+    if not urlRTSP:
+        raise ValueError("CAMERA2_RTSP_URL environment variable must be configured. See .env.example for details.")
     videostream = ThreadVideoCapture(resolution=(imW,imH),url=urlRTSP).start(args)
     time.sleep(1)
     
