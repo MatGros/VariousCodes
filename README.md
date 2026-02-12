@@ -170,7 +170,7 @@ Une analyse de sécurité a été effectuée sur ce dépôt. Voici les observati
 **Détails :**
 Des URL RTSP avec identifiants sont présentes dans les commentaires du code :
 ```python
-# Exemple : "rtsp://admin:iop147258@192.168.1.21:554/..."
+# Exemple : "rtsp://username:password@192.168.x.x:554/..."
 ```
 
 **Recommandations :**

@@ -11,7 +11,7 @@ class ThreadVideoCapture :
     # Initialisation
     def __init__(self, resolution=(640,360),url=""):
         self.stream = cv2.VideoCapture(url)
-        #self.stream = cv2.VideoCapture("rtsp://admin:iop147258@192.168.1.25:554/Streaming/Channels/2")
+        #self.stream = cv2.VideoCapture("rtsp://username:password@192.168.x.x:554/Streaming/Channels/2")
         #self.stream = cv2.VideoCapture(STREAM_URL)
         #self.stream = cv2.VideoCapture(0)
         #self.stream = cv2.VideoCapture("/home/pi/Desktop/Partage/Vidéos/00000000662009413.mp4")
